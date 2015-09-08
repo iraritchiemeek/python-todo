@@ -1,5 +1,5 @@
 import sqlite3
-from bottle import route, run
+from bottle import route, run, debug
 
 @route('/doesthiswork')
 @route('/todo')
@@ -10,4 +10,5 @@ def todo_list():
     result = c.fetchall()
     return str(result)
 
-run()
+debug(True)
+run(reloader=True)
